@@ -1,0 +1,42 @@
+Identifier names 
+are case-sensitive
+my_var
+my_Var
+ham
+Ham
+
+Must folle certain rules
+	Should follow certain conventions
+
+MUST
+Start with a underscore ( _ ) or letter (a-z A-Z)
+	Followed by any number of underscore ( _ ), letters ( a-z A-Z ), or digits ( 0-9 )
+	var    my_var    index1    index_1    _var    ___var    ___lt___
+Cannot be reserved words:
+None	True	False
+And	or	not
+If	else	elif
+For	while	break	continue    pass
+Def	lambda		global		nonlocal	return	yield   
+Del	in	is	assert	class
+Try	except		finally		raise
+Import		from 		with		as
+
+SHOULD
+_my_var
+Single underscore at beginning, is a convention to indicate internal use of private objects, objects named this way will not get imported by a statement such as:
+from module import *
+
+__my_var
+Double underscore is used to “mangle” class attributes – useful in inheritance chains
+__my_var__ 
+Double underscore at beginning and at end are used for system-defined names that have a special meaning to the interpreter. Do not invent them, stick with the ones pre-defined by Python! 
+E.g. __init__
+x < y  x.__lt__(y)
+Other names conventions (from the PEP 8 Style Guide)
+Packages: short, all-lowercase names. Preferably no underscores (e.g. utilities)
+Modules: short, all-lowercase names. Can have underscores (e.g. db_utils, dbutils)
+Classes: CapWords (upper camel case) convention (e.g. BankAccount)
+Functions: lowercase, words separated by underscores (snake_case), (e.g. open_account)
+Variables: lowercase, words separated by underscores (snake_case), (e.g. account_id)
+Constants: all-uppercase, words separated by underscores (e.g. MIN_APR)
