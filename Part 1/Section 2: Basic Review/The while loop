@@ -1,0 +1,80 @@
+i = 0
+while i < 5:
+    print(i)
+    i += 1
+
+
+#Break	
+i = 5
+
+while True:
+    print(i)
+    if i >= 5:
+        break   # the break statement will break the loop immediately
+
+# while without break
+
+min_lenght = 2
+
+name = input("Please enter your name: ")
+
+while not(len(name) >= min_lenght and name.isprintable() and name.isalpha()):
+    name = input("Please enter your name: ")
+
+print("Hello, {0}".format(name))
+
+
+#Refactored to use break
+
+min_lenght = 2
+
+while True:
+    name = input("Please enter your name: ")
+    if len(name) >= min_lenght and name.isprintable() and name.isalpha():
+        break
+
+print("Hello, {0}".format(name))
+
+#Continue
+
+a = 0
+while a < 10:
+    a += 1
+    if a % 2 == 0:
+        continue    # the continue statement sskip everything that comes after it and go back to beginig off the loop
+    print(a)
+	
+	
+#Else statement
+
+# whithout else
+l = [1, 2, 3]
+val = 10
+
+found = False
+idx = 0
+while idx < len(l):    # while index is lesse than thee length of l the code is recursive
+    if l[idx] == val:  # if the position of l is equal to val the var found will be True
+        found = True
+        break
+    idx += 1           # increment
+
+if not found:
+    l.append(val)
+
+print(l)
+
+# Reactoring to use else
+
+l = [1, 2, 3]
+val = 10
+
+idx = 0
+while idx < len(l):    # while index is lesse than thee length of l the code is recursive
+    if l[idx] == val:  # if the position of l is equal to val the var found will be True
+        break
+    idx += 1           # increment
+else:
+    l.append(val)
+
+print(l)
