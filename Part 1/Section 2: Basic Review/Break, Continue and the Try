@@ -1,0 +1,21 @@
+a = 0     # operator 1
+b = 10    # operator 2
+l = 1     # counter
+while a < 4:
+    print('Loop', l)
+    a += 1
+    b -= 1
+    l += 1
+
+    try:
+        a / b
+    except ZeroDivisionError:
+        print("{0}, {1} - division by 0".format(a, b))
+        break
+    finally:
+        print("{0}, {1} - always executes".format(a, b))
+
+    print("{0}, {1} - main loop".format(a, b))
+else:
+    print('Code executed without a zero division error')
+
