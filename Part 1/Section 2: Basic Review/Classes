@@ -3,30 +3,44 @@ class Rectangle:
         self._width = width    # setting the properties. It means that self.xxxx is defining the attribute
         self._height = height    # the _ indicates that is a private variable. Advisible to not change it
 
-    def get_width(self):
+    # Decorators and properties
+    @property
+    def width(self):
         return self._width
 
-    def set_width(self, width):    # Preventing the width to be less or equal to 0
+    @width.setter
+    def width(self, width):
         if width <= 0:
-            raise ValueError('Width must be positive.')
+            raise ValueError('Width must be positive')
         else:
             self._width = width
 
+    @property
+    def height(self):
+        return self._height
+
+    @height.setter
+    def height(self, height):
+        if height <= 0:
+            raise ValueError('Height must be positive')
+        else:
+            self._height = height
+
     def area(self):
-        return self._width * self._height
+        return self.width * self.height
 
     def perimeter(self):
-        return 2 * (self._width + self._height)
+        return 2 * (self.width + self.height)
 
     def __str__(self):    # this method allows us to call the object inside an str() to get the string representation
-        return 'Rectangle: width = {0}, height = {1}'.format(self._width, self._height)
+        return 'Rectangle: width = {0}, height = {1}'.format(self.width, self.height)
 
     def __repr__(self):    # does the same as __str__, but without the need to call it inside an str() function
-        return 'Rectangle({0}, {1})'.format(self._width, self._height)
+        return 'Rectangle({0}, {1})'.format(self.width, self.height)
 
     def __eq__(self, other):    # this methos is used to compare two object that has the same value
         if isinstance(other, Rectangle):    # used to compare the objects to another type of objects
-            return self._width == other._width and self._height == other._height
+            return self.width == other.width and self.height == other.height
         else:
             return False
 
@@ -37,13 +51,14 @@ class Rectangle:
             return NotImplemented
 
 
-r1 = Rectangle(-10, 20)
+r1 = Rectangle(10, 20)
 r2 = Rectangle(100, 200)
 
 print(r1 is not r2)
 print(r1 == r2)
 print(r1 == 100)
 print(r1 < r2)
+print(r1)
 
 
 # All statements in a class that is writen as __xxxx__ is called a instance method. Methods is called 'callables'
