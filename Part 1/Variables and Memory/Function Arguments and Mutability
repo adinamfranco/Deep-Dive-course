@@ -1,0 +1,23 @@
+# Modifying the function changing the reference
+def process(s):
+    print('Initial s 0 = {0}'.format(id(s)))
+    s = s + 'world'
+    print('Final s # = {0}'.format(id(s)))
+
+
+my_var = 'hello'
+print('my_var # = {0}'.format(id(my_var)))
+process(my_var)
+
+
+# Modifying the function without changing the reference
+def modify_list(lst):
+    print('Initial lst # = {0}'.format(id(lst)))
+    lst.append(100)
+    print('Final lst # = {0}'.format(id(lst)))
+
+
+my_list = [1, 2, 3]
+print('my_list # ={0}'.format(id(my_list)))
+modify_list(my_list)
+
