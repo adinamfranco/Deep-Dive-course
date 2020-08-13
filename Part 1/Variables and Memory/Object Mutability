@@ -1,0 +1,49 @@
+'''
+Imutable
+
+Numbers (int, float, booleans, etc)
+Strings
+Tuples
+Frozen Sets
+User-Defined Classes
+
+
+Mutable
+
+Lists
+Sets
+Dictionaries
+User-Defined Classes
+
+
+Mutables objects can contain mutables objects
+EG
+'''
+
+a = [1, 2]    # mutable
+b = [3, 4]    # mutable
+t = (a, b)    # immutable
+
+a.append(3)
+b.append(5)
+
+########################################
+
+my_list = [1, 2, 3]
+
+print(my_list)
+print(type(my_list))
+print(id(my_list))
+
+my_list.append(4)
+print(my_list)
+print(type(my_list))
+print(id(my_list))
+
+my_list_1 = [1, 2, 3]
+print(my_list_1)
+print(id(my_list_1))
+
+my_list_1 = my_list_1 + [4]
+print(my_list_1)
+print(id(my_list_1))
